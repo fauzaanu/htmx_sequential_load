@@ -1,5 +1,5 @@
 (function() {
-  const HTMXSequentialLoad = {
+  const HTMXSqLoad = {
     init: function(config = {}) {
       this.delay = config.delay || 1000;
       this.initialDelay = config.initialDelay || 100;
@@ -23,5 +23,5 @@
     }
   };
 
-  window.HTMXSequentialLoad = HTMXSequentialLoad;
+  window.HTMXSqLoad = HTMXSqLoad;
 })();
