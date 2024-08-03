@@ -1,4 +1,4 @@
-# HTMX Sequential Load
+# sqload
 
 A drop-in script to delay between each subsequent request with the same load event of `sqload`. This is ideal for scenarios where you need to trigger multiple heavy processes sequentially, or when using databases like SQLite that don't handle high concurrency well.
 
