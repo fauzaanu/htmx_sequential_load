@@ -1,15 +1,10 @@
 # HTMX Sequential Load
 
-A drop-in script for htmx to delay between each subsequent request with the same load event of `sqload`. 
-This is ideal for scenarios where you need to trigger multiple heavy processes sequentially, or when using databases like SQLite that don't handle high concurrency well.
-Instead of controlling the delay for each individual request, this script dynamically manages delays for all HTMX requests using the `sqload` event, providing a convenient solution for sequential loading.
+A lightweight, drop-in solution for HTMX to manage sequential loading of multiple requests. 
 
-## Features
-
-- Sequential triggering of HTMX requests
-- Dynamic delay between requests
-- Simple integration with existing HTMX-powered pages
-- Ideal for heavy processes or databases with limited concurrency
+`sqload` introduces a custom event that allows you to easily control the timing and sequence of HTMX requests.
+By using the `sqload` event, you can effortlessly implement controlled, sequential loading without modifying individual HTMX elements to control their timing. 
+`sqload` is more of a convenience, especially when adding htmx `load` event items through a loop and not wanting to add custom delays for each element of the loop.
 
 ## Usage
 
