@@ -39,6 +39,19 @@ Instead of controlling the delay for each individual request, this script dynami
    });
    ```
 
+3. Or use sqload.js 
+
+```html
+<script src="sqload.js"></script>
+<script>
+  HTMXSequentialLoad.init({
+    delay: 1500,  // Optional: custom delay in ms (default is 1000)
+    initialDelay: 200  // Optional: custom initial delay in ms (default is 100)
+  });
+</script>
+```
+
+
 ## Configuration
 
 You can adjust two main parameters in the script:
