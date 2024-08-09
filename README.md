@@ -1,10 +1,13 @@
 # HTMX Sequential Load
 
-A lightweight, drop-in solution for HTMX to manage sequential loading of multiple requests while looping htmx content with `load` trigger.
+This small script is for a very specefic situation.
 
-Instead of using `load` within a loop use `sqload` and it just works. This is only nessesary if your server cannot reliably handle a loop triggering many htmx load events all at once.
-
-`sqload` is a custom event and is more of a convenience. (there are other ways to handle this situation for sure)
+1. You are loading in htmx load trigger events through a loop from a backend framework
+2. You are using sqlite3 which doesnt have great concurrency
+3. You have a lot of data being loaded at once and implementing pagination is impossible due to the nature of the data
+4. You dont want to really let the loop handle adding delays
+5. So you can add this script and change the load events to sqload events
+6. The script collects all the events with `sqload` and ques them (staggers them) with a delay with minimal JS
 
 ## Usage
 
@@ -46,7 +49,6 @@ Instead of using `load` within a loop use `sqload` and it just works. This is on
 </script>
 ```
 
-
 ## Configuration
 
 You can adjust two main parameters in the script:
@@ -54,5 +56,6 @@ You can adjust two main parameters in the script:
 - `delay`: Time in milliseconds between each request (default: 1000)
 - `Initial delay`: Time in milliseconds before starting the sequence (default: 100, set in the last line of the script)
 
-Modify these values according to your specific needs and server capabilities.
+
+[LICENSE](https://github.com/fauzaanu/sqload/blob/main/LICENSE)
 
